@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="战士武器 狂徒 防护 圣骑士神圣 防护 惩戒 猎人野兽控制 射击 生存 潜行者奇袭 狂徒 敏锐 牧师戒律 神圣 暗影 萨满祭司元素 增强 恢复 法师奥术 火焰 冰霜 术士痛苦 恶魔学识 毁灭 武僧酒仙 织雾 踏风 德鲁伊平衡 野性 守护 恢复 死亡骑士鲜血 冰霜 邪恶 恶魔猎手浩劫 复仇">
+<meta name="keywords" content="Laravel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wow 8.0 天赋推荐">
+<meta property="og:url" content="https://cjy.wangk.cn/2018/09/14/wow-8-0-天赋推荐/index.html">
+<meta property="og:site_name" content="梦的起点">
+<meta property="og:description" content="战士武器 狂徒 防护 圣骑士神圣 防护 惩戒 猎人野兽控制 射击 生存 潜行者奇袭 狂徒 敏锐 牧师戒律 神圣 暗影 萨满祭司元素 增强 恢复 法师奥术 火焰 冰霜 术士痛苦 恶魔学识 毁灭 武僧酒仙 织雾 踏风 德鲁伊平衡 野性 守护 恢复 死亡骑士鲜血 冰霜 邪恶 恶魔猎手浩劫 复仇">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00801.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00802.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00803.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00701.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00702.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00703.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00101.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00102.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00103.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/01201.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/01202.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/01203.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00501.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00502.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00503.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00601.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00602.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00603.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00901.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00902.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00903.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/01001.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/01002.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/01003.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/01101.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/01102.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/01103.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00201.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00202.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00203.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00204.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00301.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00302.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00303.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00401.png">
+<meta property="og:image" content="https://cjy.wangk.cn/images/wow/00402.png">
+<meta property="og:updated_time" content="2018-09-21T06:02:09.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wow 8.0 天赋推荐">
+<meta name="twitter:description" content="战士武器 狂徒 防护 圣骑士神圣 防护 惩戒 猎人野兽控制 射击 生存 潜行者奇袭 狂徒 敏锐 牧师戒律 神圣 暗影 萨满祭司元素 增强 恢复 法师奥术 火焰 冰霜 术士痛苦 恶魔学识 毁灭 武僧酒仙 织雾 踏风 德鲁伊平衡 野性 守护 恢复 死亡骑士鲜血 冰霜 邪恶 恶魔猎手浩劫 复仇">
+<meta name="twitter:image" content="https://cjy.wangk.cn/images/wow/00801.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://cjy.wangk.cn/2018/09/14/wow-8-0-天赋推荐/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>wow 8.0 天赋推荐 | 梦的起点</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5e48bf2510518899010374468e330d14";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">梦的起点</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">好记性不如烂笔头</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cjy.wangk.cn/2018/09/14/wow-8-0-天赋推荐/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈瑾瑜">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦的起点">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">wow 8.0 天赋推荐<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/wow-8-0-天赋推荐.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-14 17:36:10" itemprop="dateCreated datePublished" datetime="2018-09-14T17:36:10+08:00">2018-09-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-21 14:02:09" itemprop="dateModified" datetime="2018-09-21T14:02:09+08:00">2018-09-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Laravel/" itemprop="url" rel="index"><span itemprop="name">Laravel</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="战士"><a href="#战士" class="headerlink" title="战士"></a>战士</h1><h2 id="武器"><a href="#武器" class="headerlink" title="武器"></a>武器</h2><p><img src="/images/wow/00801.png" alt="战士 - 武器"></p>
+<h2 id="狂徒"><a href="#狂徒" class="headerlink" title="狂徒"></a>狂徒</h2><p><img src="/images/wow/00802.png" alt="战士 - 狂徒"></p>
+<h2 id="防护"><a href="#防护" class="headerlink" title="防护"></a>防护</h2><p><img src="/images/wow/00803.png" alt="战士 - 防护"></p>
+<h1 id="圣骑士"><a href="#圣骑士" class="headerlink" title="圣骑士"></a>圣骑士</h1><h2 id="神圣"><a href="#神圣" class="headerlink" title="神圣"></a>神圣</h2><p><img src="/images/wow/00701.png" alt="圣骑士 - 武器"></p>
+<h2 id="防护-1"><a href="#防护-1" class="headerlink" title="防护"></a>防护</h2><p><img src="/images/wow/00702.png" alt="圣骑士 - 防护"></p>
+<h2 id="惩戒"><a href="#惩戒" class="headerlink" title="惩戒"></a>惩戒</h2><p><img src="/images/wow/00703.png" alt="圣骑士 - 惩戒"></p>
+<h1 id="猎人"><a href="#猎人" class="headerlink" title="猎人"></a>猎人</h1><h2 id="野兽控制"><a href="#野兽控制" class="headerlink" title="野兽控制"></a>野兽控制</h2><p><img src="/images/wow/00101.png" alt="猎人 - 野兽控制"></p>
+<h2 id="射击"><a href="#射击" class="headerlink" title="射击"></a>射击</h2><p><img src="/images/wow/00102.png" alt="猎人 - 射击"></p>
+<h2 id="生存"><a href="#生存" class="headerlink" title="生存"></a>生存</h2><p><img src="/images/wow/00103.png" alt="猎人 - 生存"></p>
+<h1 id="潜行者"><a href="#潜行者" class="headerlink" title="潜行者"></a>潜行者</h1><h2 id="奇袭"><a href="#奇袭" class="headerlink" title="奇袭"></a>奇袭</h2><p><img src="/images/wow/01201.png" alt="潜行者 - 奇袭"></p>
+<h2 id="狂徒-1"><a href="#狂徒-1" class="headerlink" title="狂徒"></a>狂徒</h2><p><img src="/images/wow/01202.png" alt="潜行者 - 狂徒"></p>
+<h2 id="敏锐"><a href="#敏锐" class="headerlink" title="敏锐"></a>敏锐</h2><p><img src="/images/wow/01203.png" alt="潜行者 - 敏锐"></p>
+<h1 id="牧师"><a href="#牧师" class="headerlink" title="牧师"></a>牧师</h1><h2 id="戒律"><a href="#戒律" class="headerlink" title="戒律"></a>戒律</h2><p><img src="/images/wow/00501.png" alt="牧师 - 戒律"></p>
+<h2 id="神圣-1"><a href="#神圣-1" class="headerlink" title="神圣"></a>神圣</h2><p><img src="/images/wow/00502.png" alt="牧师 - 神圣"></p>
+<h2 id="暗影"><a href="#暗影" class="headerlink" title="暗影"></a>暗影</h2><p><img src="/images/wow/00503.png" alt="牧师 - 暗影"></p>
+<h1 id="萨满祭司"><a href="#萨满祭司" class="headerlink" title="萨满祭司"></a>萨满祭司</h1><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><img src="/images/wow/00601.png" alt="萨满祭司 - 元素"></p>
+<h2 id="增强"><a href="#增强" class="headerlink" title="增强"></a>增强</h2><p><img src="/images/wow/00602.png" alt="萨满祭司 - 增强"></p>
+<h2 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h2><p><img src="/images/wow/00603.png" alt="萨满祭司 - 恢复"></p>
+<h1 id="法师"><a href="#法师" class="headerlink" title="法师"></a>法师</h1><h2 id="奥术"><a href="#奥术" class="headerlink" title="奥术"></a>奥术</h2><p><img src="/images/wow/00901.png" alt="法师 - 奥术"></p>
+<h2 id="火焰"><a href="#火焰" class="headerlink" title="火焰"></a>火焰</h2><p><img src="/images/wow/00902.png" alt="法师 - 火焰"></p>
+<h2 id="冰霜"><a href="#冰霜" class="headerlink" title="冰霜"></a>冰霜</h2><p><img src="/images/wow/00903.png" alt="法师 - 冰霜"></p>
+<h1 id="术士"><a href="#术士" class="headerlink" title="术士"></a>术士</h1><h2 id="痛苦"><a href="#痛苦" class="headerlink" title="痛苦"></a>痛苦</h2><p><img src="/images/wow/01001.png" alt="术士 - 酒仙"></p>
+<h2 id="恶魔学识"><a href="#恶魔学识" class="headerlink" title="恶魔学识"></a>恶魔学识</h2><p><img src="/images/wow/01002.png" alt="术士 - 恶魔学识"></p>
+<h2 id="毁灭"><a href="#毁灭" class="headerlink" title="毁灭"></a>毁灭</h2><p><img src="/images/wow/01003.png" alt="术士 - 毁灭"></p>
+<h1 id="武僧"><a href="#武僧" class="headerlink" title="武僧"></a>武僧</h1><h2 id="酒仙"><a href="#酒仙" class="headerlink" title="酒仙"></a>酒仙</h2><p><img src="/images/wow/01101.png" alt="武僧 - 酒仙"></p>
+<h2 id="织雾"><a href="#织雾" class="headerlink" title="织雾"></a>织雾</h2><p><img src="/images/wow/01102.png" alt="武僧 - 织雾"></p>
+<h2 id="踏风"><a href="#踏风" class="headerlink" title="踏风"></a>踏风</h2><p><img src="/images/wow/01103.png" alt="武僧 - 踏风"></p>
+<h1 id="德鲁伊"><a href="#德鲁伊" class="headerlink" title="德鲁伊"></a>德鲁伊</h1><h2 id="平衡"><a href="#平衡" class="headerlink" title="平衡"></a>平衡</h2><p><img src="/images/wow/00201.png" alt="德鲁伊 - 平衡"></p>
+<h2 id="野性"><a href="#野性" class="headerlink" title="野性"></a>野性</h2><p><img src="/images/wow/00202.png" alt="德鲁伊 - 野性"></p>
+<h2 id="守护"><a href="#守护" class="headerlink" title="守护"></a>守护</h2><p><img src="/images/wow/00203.png" alt="德鲁伊 - 守护"></p>
+<h2 id="恢复-1"><a href="#恢复-1" class="headerlink" title="恢复"></a>恢复</h2><p><img src="/images/wow/00204.png" alt="德鲁伊 - 恢复"></p>
+<h1 id="死亡骑士"><a href="#死亡骑士" class="headerlink" title="死亡骑士"></a>死亡骑士</h1><h2 id="鲜血"><a href="#鲜血" class="headerlink" title="鲜血"></a>鲜血</h2><p><img src="/images/wow/00301.png" alt="死亡骑士 - 鲜血"></p>
+<h2 id="冰霜-1"><a href="#冰霜-1" class="headerlink" title="冰霜"></a>冰霜</h2><p><img src="/images/wow/00302.png" alt="死亡骑士 - 冰霜"></p>
+<h2 id="邪恶"><a href="#邪恶" class="headerlink" title="邪恶"></a>邪恶</h2><p><img src="/images/wow/00303.png" alt="死亡骑士 - 邪恶"></p>
+<h1 id="恶魔猎手"><a href="#恶魔猎手" class="headerlink" title="恶魔猎手"></a>恶魔猎手</h1><h2 id="浩劫"><a href="#浩劫" class="headerlink" title="浩劫"></a>浩劫</h2><p><img src="/images/wow/00401.png" alt="恶魔猎手 - 浩劫"></p>
+<h2 id="复仇"><a href="#复仇" class="headerlink" title="复仇"></a>复仇</h2><p><img src="/images/wow/00402.png" alt="恶魔猎手 - 复仇"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>陈瑾瑜</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cjy.wangk.cn/2018/09/14/wow-8-0-天赋推荐/" title="wow 8.0 天赋推荐">https://cjy.wangk.cn/2018/09/14/wow-8-0-天赋推荐/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Laravel/" rel="tag"># Laravel</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/10/Laravel-5-7-Documentation/" rel="next" title="Laravel 5.7 Documentation">
+                <i class="fa fa-chevron-left"></i> Laravel 5.7 Documentation
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="陈瑾瑜" />
+            
+              <p class="site-author-name" itemprop="name">陈瑾瑜</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#战士"><span class="nav-number">1.</span> <span class="nav-text">战士</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#武器"><span class="nav-number">1.1.</span> <span class="nav-text">武器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狂徒"><span class="nav-number">1.2.</span> <span class="nav-text">狂徒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防护"><span class="nav-number">1.3.</span> <span class="nav-text">防护</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#圣骑士"><span class="nav-number">2.</span> <span class="nav-text">圣骑士</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神圣"><span class="nav-number">2.1.</span> <span class="nav-text">神圣</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防护-1"><span class="nav-number">2.2.</span> <span class="nav-text">防护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#惩戒"><span class="nav-number">2.3.</span> <span class="nav-text">惩戒</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#猎人"><span class="nav-number">3.</span> <span class="nav-text">猎人</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#野兽控制"><span class="nav-number">3.1.</span> <span class="nav-text">野兽控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#射击"><span class="nav-number">3.2.</span> <span class="nav-text">射击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生存"><span class="nav-number">3.3.</span> <span class="nav-text">生存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#潜行者"><span class="nav-number">4.</span> <span class="nav-text">潜行者</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#奇袭"><span class="nav-number">4.1.</span> <span class="nav-text">奇袭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狂徒-1"><span class="nav-number">4.2.</span> <span class="nav-text">狂徒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敏锐"><span class="nav-number">4.3.</span> <span class="nav-text">敏锐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牧师"><span class="nav-number">5.</span> <span class="nav-text">牧师</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#戒律"><span class="nav-number">5.1.</span> <span class="nav-text">戒律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神圣-1"><span class="nav-number">5.2.</span> <span class="nav-text">神圣</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暗影"><span class="nav-number">5.3.</span> <span class="nav-text">暗影</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#萨满祭司"><span class="nav-number">6.</span> <span class="nav-text">萨满祭司</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元素"><span class="nav-number">6.1.</span> <span class="nav-text">元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增强"><span class="nav-number">6.2.</span> <span class="nav-text">增强</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恢复"><span class="nav-number">6.3.</span> <span class="nav-text">恢复</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#法师"><span class="nav-number">7.</span> <span class="nav-text">法师</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#奥术"><span class="nav-number">7.1.</span> <span class="nav-text">奥术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#火焰"><span class="nav-number">7.2.</span> <span class="nav-text">火焰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冰霜"><span class="nav-number">7.3.</span> <span class="nav-text">冰霜</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#术士"><span class="nav-number">8.</span> <span class="nav-text">术士</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#痛苦"><span class="nav-number">8.1.</span> <span class="nav-text">痛苦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恶魔学识"><span class="nav-number">8.2.</span> <span class="nav-text">恶魔学识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#毁灭"><span class="nav-number">8.3.</span> <span class="nav-text">毁灭</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#武僧"><span class="nav-number">9.</span> <span class="nav-text">武僧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#酒仙"><span class="nav-number">9.1.</span> <span class="nav-text">酒仙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#织雾"><span class="nav-number">9.2.</span> <span class="nav-text">织雾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#踏风"><span class="nav-number">9.3.</span> <span class="nav-text">踏风</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#德鲁伊"><span class="nav-number">10.</span> <span class="nav-text">德鲁伊</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#平衡"><span class="nav-number">10.1.</span> <span class="nav-text">平衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#野性"><span class="nav-number">10.2.</span> <span class="nav-text">野性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#守护"><span class="nav-number">10.3.</span> <span class="nav-text">守护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恢复-1"><span class="nav-number">10.4.</span> <span class="nav-text">恢复</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#死亡骑士"><span class="nav-number">11.</span> <span class="nav-text">死亡骑士</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#鲜血"><span class="nav-number">11.1.</span> <span class="nav-text">鲜血</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冰霜-1"><span class="nav-number">11.2.</span> <span class="nav-text">冰霜</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#邪恶"><span class="nav-number">11.3.</span> <span class="nav-text">邪恶</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恶魔猎手"><span class="nav-number">12.</span> <span class="nav-text">恶魔猎手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#浩劫"><span class="nav-number">12.1.</span> <span class="nav-text">浩劫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复仇"><span class="nav-number">12.2.</span> <span class="nav-text">复仇</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">读书笔记 -  <a href="http://www.miibeian.gov.cn/" target="_blank">苏ICP备18046890号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+  <div class="footer-custom">常用链接：<a href="https://translate.google.cn/" target="_blank">Google翻译</a> | <a href="https://gitee.com/gitwk" target="_blank">GITEE</a> <br><br><br></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

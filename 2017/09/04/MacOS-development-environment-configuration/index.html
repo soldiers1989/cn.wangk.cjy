@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="开启任意源信任1sudo spctl --master-disable 安装xcode和xcode-select1xcode-select --install 安装brew12345678910111213141516171819# 安装/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install">
+<meta name="keywords" content="macOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="macOS开发环境配置">
+<meta property="og:url" content="https://cjy.wangk.cn/2017/09/04/MacOS-development-environment-configuration/index.html">
+<meta property="og:site_name" content="梦的起点">
+<meta property="og:description" content="开启任意源信任1sudo spctl --master-disable 安装xcode和xcode-select1xcode-select --install 安装brew12345678910111213141516171819# 安装/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-21T06:02:09.180Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="macOS开发环境配置">
+<meta name="twitter:description" content="开启任意源信任1sudo spctl --master-disable 安装xcode和xcode-select1xcode-select --install 安装brew12345678910111213141516171819# 安装/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install">
+
+
+
+
+
+
+  <link rel="canonical" href="https://cjy.wangk.cn/2017/09/04/MacOS-development-environment-configuration/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>macOS开发环境配置 | 梦的起点</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5e48bf2510518899010374468e330d14";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">梦的起点</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">好记性不如烂笔头</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cjy.wangk.cn/2017/09/04/MacOS-development-environment-configuration/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈瑾瑜">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦的起点">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">macOS开发环境配置<a href="https://gitee.com/gitwk/cn.wangk.wk/edit/2018/source/_posts/MacOS-development-environment-configuration.md" class="post-edit-link" title="编辑" target="_blank">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-04 17:13:33" itemprop="dateCreated datePublished" datetime="2017-09-04T17:13:33+08:00">2017-09-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-21 14:02:09" itemprop="dateModified" datetime="2018-09-21T14:02:09+08:00">2018-09-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/macOS/" itemprop="url" rel="index"><span itemprop="name">macOS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="开启任意源信任"><a href="#开启任意源信任" class="headerlink" title="开启任意源信任"></a>开启任意源信任</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
+<h1 id="安装xcode和xcode-select"><a href="#安装xcode和xcode-select" class="headerlink" title="安装xcode和xcode-select"></a>安装xcode和xcode-select</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+<h1 id="安装brew"><a href="#安装brew" class="headerlink" title="安装brew"></a>安装brew</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换brew.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/brew.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-core.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-cask.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span>/Library/Taps/caskroom/homebrew-cask</span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># Homebrew Bottles 源</span></span><br></pre></td></tr></table></figure>
+<h1 id="安装cask和php-Tap"><a href="#安装cask和php-Tap" class="headerlink" title="安装cask和php Tap"></a>安装cask和php Tap</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># brew tap homebrew/core</span></span><br><span class="line">brew tap caskroom/cask</span><br></pre></td></tr></table></figure>
+<h1 id="安装开发工具"><a href="#安装开发工具" class="headerlink" title="安装开发工具"></a>安装开发工具</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew cask install iterm2 android-studio intellij-idea phpstorm pycharm visual-studio-code switchhosts google-chrome sourcetree flash-ppapi flash-npapi</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h1 id="安装开发语言扩展"><a href="#安装开发语言扩展" class="headerlink" title="安装开发语言扩展"></a>安装开发语言扩展</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># php 7.2</span></span><br><span class="line">brew install php composer wget git node ruby python python3 maven svn kotlin flex ant unrar zsh-autosuggestions mysql gradle redis libmemcached beanstalkd memcached zip</span><br><span class="line"></span><br><span class="line">pecl install swoole</span><br><span class="line">pecl install memcached</span><br><span class="line"></span><br><span class="line"><span class="comment"># php 7.1</span></span><br><span class="line"></span><br><span class="line">brew install php71 php71-opcache php71-imagick php71-swoole php71-memcached composer wget git node ruby python python3 maven svn kotlin flex ant unrar zsh-autosuggestions mysql gradle redis</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">brew install gnu-sed --with-default-names</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h1 id="修改开发工具的国内源"><a href="#修改开发工具的国内源" class="headerlink" title="修改开发工具的国内源"></a>修改开发工具的国内源</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">composer config -g repo.packagist composer https://packagist.phpcomposer.com</span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org --global </span><br><span class="line">npm config <span class="built_in">set</span> disturl https://npm.taobao.org/dist --global</span><br><span class="line">gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/</span><br><span class="line">gem sources -l</span><br><span class="line">git config --global user.name <span class="string">"王康"</span></span><br><span class="line">git config --global user.email earl.k.wang@wangk.cn</span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line">git config --global core.autocrlf input</span><br><span class="line">git config --global core.safecrlf <span class="literal">true</span></span><br><span class="line">git config --global credential.helper store</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'https://earl.k.wang%40wangk.cn:Computer%23987223@github.com</span></span><br><span class="line"><span class="string">https://earl.k.wang%40wangk.cn:Computer%23987223@gitee.com</span></span><br><span class="line"><span class="string">'</span> &gt; ~/.git-credentials</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h1 id="安装node工具和ruby工具"><a href="#安装node工具和ruby工具" class="headerlink" title="安装node工具和ruby工具"></a>安装node工具和ruby工具</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install sass</span><br><span class="line">sudo gem install rails</span><br><span class="line">sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
+<h1 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装oh-my-zsh</span></span><br><span class="line">curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装powerline主题</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git ~/.ohmyzsh-powerline</span><br><span class="line"><span class="built_in">cd</span> ~/.ohmyzsh-powerline/</span><br><span class="line">./install_in_omz.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装字体库</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/powerline/fonts.git ~/.powerline_fonts</span><br><span class="line"><span class="built_in">cd</span> ~/.powerline_fonts</span><br><span class="line">./install.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改环境变量</span></span><br><span class="line">code ~/.zshrc</span><br><span class="line"><span class="comment">## 將ZSH_THEME=”robbyrussell”修改成ZSH_THEME=”powerline”</span></span><br><span class="line"><span class="comment">## 选择等宽字体，选择Source Code Pro 字体</span></span><br><span class="line"><span class="comment">## 第一行添加</span></span><br><span class="line">POWERLINE_HIDE_HOST_NAME=<span class="string">"true"</span></span><br><span class="line">POWERLINE_DISABLE_RPOMPT=<span class="string">"true"</span></span><br><span class="line">POWERLINE_FULL_CURRENT_PATH=<span class="string">"true"</span></span><br><span class="line">POWERLINE_PATH=<span class="string">"short"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=~/Documents/bin:~/.composer/vendor/bin:/usr/<span class="built_in">local</span>/sbin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> ANDROID_HOME=~/Library/Android/sdk</span><br><span class="line"><span class="built_in">export</span> NDK_ROOT=~/Library/Android/sdk/ndk-bundle</span><br><span class="line"><span class="built_in">export</span> ANDROID_SDK_ROOT=~/Library/Android/sdk</span><br><span class="line"><span class="built_in">export</span> ANT_ROOT=/usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> WWWROOT_HOME=~/Projects/PhpProjects</span><br><span class="line"><span class="built_in">export</span> SCRIPT_HOME=~/Documents/Script</span><br><span class="line"><span class="built_in">export</span> LNMP_HOME=~/Projects/OtherProjects/Lnmp</span><br><span class="line"><span class="built_in">export</span> SUPERVISORD_HOME=~/Projects/OtherProjects/supervisord/supervisord.d</span><br><span class="line"><span class="built_in">export</span> BOOKS_PATH=~/Projects/BooksProjects</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ANDROID_HOME</span>/tools:<span class="variable">$ANDROID_HOME</span>/platform-tools:<span class="variable">$SCRIPT_HOME</span></span><br></pre></td></tr></table></figure>
+<h1 id="开发配置"><a href="#开发配置" class="headerlink" title="开发配置"></a>开发配置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 开发目录</span></span><br><span class="line">mkdir -p ~/Projects/&#123;Android,Xcode,Php,Java,Books,Other,Python,Ruby&#125;Projects</span><br></pre></td></tr></table></figure>
+<h1 id="安装PHP工具和配置MYSQL"><a href="#安装PHP工具和配置MYSQL" class="headerlink" title="安装PHP工具和配置MYSQL"></a>安装PHP工具和配置MYSQL</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">composer global require <span class="string">"laravel/valet"</span></span><br><span class="line">valet install</span><br><span class="line"><span class="built_in">cd</span> ~/Projects/PhpProjects</span><br><span class="line"><span class="comment">#valet park</span></span><br><span class="line">rm -rf /Users/dave/.valet/Nginx</span><br><span class="line">sudo ln -s /Users/dave/Documents/Nginx/vhost   /Users/dave/.valet/Nginx</span><br><span class="line">valet restart</span><br><span class="line"></span><br><span class="line"><span class="comment">## 配置MYSQL</span></span><br><span class="line">mysql.server start</span><br><span class="line">mysql_secure_installation</span><br><span class="line">ALTER USER <span class="string">'root'</span>@<span class="string">'localhost'</span> IDENTIFIED WITH mysql_native_password BY <span class="string">'WangK#2016'</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="SS账号"><a href="#SS账号" class="headerlink" title="SS账号"></a>SS账号</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"server"</span>: <span class="string">"104.250.147.22"</span>,</span><br><span class="line"><span class="string">"server_port"</span>: 26605,</span><br><span class="line"><span class="string">"password"</span>: <span class="string">"13762666"</span>,</span><br><span class="line"><span class="string">"method"</span>: <span class="string">"aes-256-cfb"</span>,</span><br><span class="line"><span class="string">"remarks"</span>: <span class="string">"游戏加速"</span>,</span><br></pre></td></tr></table></figure>
+<h1 id="Apple开发者帐号"><a href="#Apple开发者帐号" class="headerlink" title="Apple开发者帐号"></a>Apple开发者帐号</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username:jason@91zhichen.com</span><br><span class="line">password:Wang91zhicheng</span><br></pre></td></tr></table></figure>
+<h1 id="Mac处理-DS-Store的方法"><a href="#Mac处理-DS-Store的方法" class="headerlink" title="Mac处理.DS_Store的方法"></a>Mac处理.DS_Store的方法</h1><h2 id="禁用-恢复-DS-Store得自动生成"><a href="#禁用-恢复-DS-Store得自动生成" class="headerlink" title="禁用/恢复.DS_Store得自动生成"></a>禁用/恢复.DS_Store得自动生成</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 禁止.DS_Store生成</span></span><br><span class="line">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE</span><br><span class="line"><span class="comment"># 恢复.DS_Store生产</span></span><br><span class="line">defaults delete com.apple.desktopservices DSDontWriteNetworkStores</span><br></pre></td></tr></table></figure>
+<h2 id="删除所有的-DS-Store文件"><a href="#删除所有的-DS-Store文件" class="headerlink" title="删除所有的.DS_Store文件"></a>删除所有的.DS_Store文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo find / -name <span class="string">".DS_Store"</span> -depth -<span class="built_in">exec</span> rm &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<h1 id="U盘安装盘制作"><a href="#U盘安装盘制作" class="headerlink" title="U盘安装盘制作"></a>U盘安装盘制作</h1><h2 id="格式化U盘"><a href="#格式化U盘" class="headerlink" title="格式化U盘"></a>格式化U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">名称：wangk</span><br><span class="line">格式：Mac OS扩展（日志式）</span><br></pre></td></tr></table></figure>
+<h2 id="OS-X-El-Capitan"><a href="#OS-X-El-Capitan" class="headerlink" title="OS X El Capitan"></a>OS X El Capitan</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/wangk --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app --nointeraction</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h2 id="macOS-Sierra"><a href="#macOS-Sierra" class="headerlink" title="macOS Sierra"></a>macOS Sierra</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/wangk --applicationpath  /Applications/Install\ macOS\ Sierra.app --nointeraction</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"> <span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h2 id="macOS-High-Sierra"><a href="#macOS-High-Sierra" class="headerlink" title="macOS High Sierra"></a>macOS High Sierra</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/wangk --applicationpath /Applications/Install\ macOS\ High\ Sierra.app --nointeraction</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"> <span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h2 id="macOS-Mojave"><a href="#macOS-Mojave" class="headerlink" title="macOS Mojave"></a>macOS Mojave</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/wangk --applicationpath /Applications/Install\ macOS\ Mojave.app --nointeraction</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>陈瑾瑜</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cjy.wangk.cn/2017/09/04/MacOS-development-environment-configuration/" title="macOS开发环境配置">https://cjy.wangk.cn/2017/09/04/MacOS-development-environment-configuration/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/macOS/" rel="tag"># macOS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/10/Precautions-for-drinking-tea/" rel="prev" title="喝茶注意事项">
+                喝茶注意事项 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQ1NC8xMzk4Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="//s.gravatar.com/avatar/5715c4f589239b569a8171db4b8f8c6f?s=200"
+                alt="陈瑾瑜" />
+            
+              <p class="site-author-name" itemprop="name">陈瑾瑜</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开启任意源信任"><span class="nav-number">1.</span> <span class="nav-text">开启任意源信任</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装xcode和xcode-select"><span class="nav-number">2.</span> <span class="nav-text">安装xcode和xcode-select</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装brew"><span class="nav-number">3.</span> <span class="nav-text">安装brew</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装cask和php-Tap"><span class="nav-number">4.</span> <span class="nav-text">安装cask和php Tap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装开发工具"><span class="nav-number">5.</span> <span class="nav-text">安装开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装开发语言扩展"><span class="nav-number">6.</span> <span class="nav-text">安装开发语言扩展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改开发工具的国内源"><span class="nav-number">7.</span> <span class="nav-text">修改开发工具的国内源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装node工具和ruby工具"><span class="nav-number">8.</span> <span class="nav-text">安装node工具和ruby工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装oh-my-zsh"><span class="nav-number">9.</span> <span class="nav-text">安装oh-my-zsh</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发配置"><span class="nav-number">10.</span> <span class="nav-text">开发配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装PHP工具和配置MYSQL"><span class="nav-number">11.</span> <span class="nav-text">安装PHP工具和配置MYSQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SS账号"><span class="nav-number">12.</span> <span class="nav-text">SS账号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Apple开发者帐号"><span class="nav-number">13.</span> <span class="nav-text">Apple开发者帐号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac处理-DS-Store的方法"><span class="nav-number">14.</span> <span class="nav-text">Mac处理.DS_Store的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用-恢复-DS-Store得自动生成"><span class="nav-number">14.1.</span> <span class="nav-text">禁用/恢复.DS_Store得自动生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除所有的-DS-Store文件"><span class="nav-number">14.2.</span> <span class="nav-text">删除所有的.DS_Store文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#U盘安装盘制作"><span class="nav-number">15.</span> <span class="nav-text">U盘安装盘制作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化U盘"><span class="nav-number">15.1.</span> <span class="nav-text">格式化U盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-X-El-Capitan"><span class="nav-number">15.2.</span> <span class="nav-text">OS X El Capitan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#macOS-Sierra"><span class="nav-number">15.3.</span> <span class="nav-text">macOS Sierra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#macOS-High-Sierra"><span class="nav-number">15.4.</span> <span class="nav-text">macOS High Sierra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#macOS-Mojave"><span class="nav-number">15.5.</span> <span class="nav-text">macOS Mojave</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2007 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">读书笔记 -  <a href="http://www.miibeian.gov.cn/" target="_blank">苏ICP备18046890号</a></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+  <div class="footer-custom">常用链接：<a href="https://translate.google.cn/" target="_blank">Google翻译</a> | <a href="https://gitee.com/gitwk" target="_blank">GITEE</a> <br><br><br></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
